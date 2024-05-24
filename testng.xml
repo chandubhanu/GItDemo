@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Loan Department" parallel="tests" thread-count="8">
+	<listeners>
+		<listener class-name="FrameworkDay1.listeners"/>
+	</listeners>
+	<parameter name="URL" value="Axxos.com"/>
+	<test thread-count="5" name="Personal loan">
+		<parameter name="URL" value="Axxos.com\order"/>
+		<parameter name="API" value="123456"/>
+			<classes>
+			<class name="FrameworkDay1.TestNG" />
+			<class name="FrameworkDay1.Day2" />
+		</classes>
+	</test> <!--
+	Test -->
+
+	<test thread-count="5" name="Car loan">
+		<parameter name="URL" value="carloan.com"/>
+		<classes>
+			<class name="FrameworkDay1.Day3" >
+			<methods>
+				<include name="LoginAPIcarLoan"/>
+				</methods>
+				</class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Home loan">
+			<parameter name="URL" value="Homeloan.com"/>
+		<classes>
+			<class name="FrameworkDay1.Day4">
+			<methods>
+				<include name="Mobile.*"/>
+				</methods>
+		</class>
+		</classes>
+	</test>
+</suite> <!--
+Suite -->
