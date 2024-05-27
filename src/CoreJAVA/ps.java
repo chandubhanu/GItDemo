@@ -8,6 +8,8 @@ public class ps {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 System.out.println("i am parent");
+System.out.println("Reactnative");
+System.out.println("java");
 	}
 
 }
